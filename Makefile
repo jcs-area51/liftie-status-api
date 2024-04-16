@@ -63,7 +63,8 @@ all: lint test build
 	$(NODE_BIN)/cleancss -O1 --output $@ $<
 
 node_modules: package.json pnpm-lock.yaml
-	pnpm install -C $(@D) --silent --frozen-lockfile
+#	pnpm install -C $(@D) --silent --frozen-lockfile
+	pnpm install -C $(@D) --frozen-lockfile
 	touch $@
 
 .NOTPARALLEL: node_modules
